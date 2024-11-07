@@ -1,0 +1,42 @@
+
+
+.navbar {
+  background-color: #6a0dad;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #6a0dad;
+  box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+}
