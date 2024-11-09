@@ -1,0 +1,19 @@
+Get requests for Pokemon with Postman:
+
+1. https://pokeapi.co/api/v2/pokemon/ivysaur
+   - Fetches data about Ivysaur.
+
+2. https://pokeapi.co/api/v2/pokemon/1
+   - Fetches data about the Pokémon with ID 1 (Bulbasaur).
+
+3. https://pokeapi.co/api/v2/pokemon/squirtle
+   - Fetches data about Squirtle.
+
+4. https://pokeapi.co/api/v2/pokemon/50
+   - Fetches data about the Pokémon with ID 50 (Diglett).
+
+5. https://pokeapi.co/api/v2/pokemon/blastoise
+   - Fetches data about Blastoise.
+
+
+
