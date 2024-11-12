@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "6733381aed4e49de2715a5f3"
+  },
+  "name": "Zara",
+  "home_state": "Washington",
+  "lucky_number": 5,
+  "birthday": "12-05-2003",
+  "interests": [
+    "coding",
+    "brunch",
+    "MongoDB",
+    "traveling"
+  ],
+  "number_of_belts": 1,
+  "updated_on": {
+    "$date": "2024-11-12T11:16:20.780Z"
+  }
+}]
