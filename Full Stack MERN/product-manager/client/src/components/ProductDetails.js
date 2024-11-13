@@ -1,34 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom'; 
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
-    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
-    
     useEffect(() => {
+        
         axios.get(`http://localhost:5000/api/products/${id}`)
-            .then((response) => {
+            .then(response => {
+                console.log('Fetched Product:', response.data);
                 setProduct(response.data);
             })
-            .catch((error) => {
+            .catch(error => {
                 console.error('Error fetching product details:', error);
-                setErrorMessage('Failed to load product details');
             });
     }, [id]);
 
-    if (!product) {
-        return <div>Loading...</div>;
-    }
+    if (!product) return <div>Loading...</div>;
+
+    const handleDelete = () => {
+        console.log('Deleting product with ID:', id);
+        axios.delete(`http://localhost:5000/api/products/delete/${id}`)
+            .then(response => {
+                console.log('Delete response:', response);
+                alert('Product deleted successfully!');
+                navigate('/products');
+            })
+            .catch(error => {
+                console.error('Error deleting product:', error);
+            });
+    };
+    
 
     return (
         <div>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
             <h1>{product.title}</h1>
-            <p>Price: ${product.price}</p>
             <p>{product.description}</p>
+            <p>Price: ${product.price}</p>
+            <button onClick={handleDelete}>Delete Product</button>
+            <Link to={`/products/update/${product._id}`}>Edit Product</Link>  
         </div>
     );
 };
