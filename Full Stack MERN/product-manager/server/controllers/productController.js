@@ -9,3 +9,13 @@ exports.createProduct = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+exports.getAllProducts = async (req, res) => {
+  try {
+    const products = await Product.find({});
+    res.json(products);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
